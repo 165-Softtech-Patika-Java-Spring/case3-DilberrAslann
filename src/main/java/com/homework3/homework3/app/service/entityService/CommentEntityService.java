@@ -79,16 +79,6 @@ public class CommentEntityService {
         return comment;
     }
 
-  /*  public List<CommentDto> findAllByUserId(Long userId) {
-
-
-        List<Comment> commentList = commentDao.findAllByUserId(userId);
-
-
-        List<CommentDto> commentDtoList= AllMapper.INSTANCE.convertToCommentDtoList(commentList);
-        return commentDtoList;
-bu orijinali
-    }*/
     public List<CommentDto> findAllByUserId(Long userId) {
 
 

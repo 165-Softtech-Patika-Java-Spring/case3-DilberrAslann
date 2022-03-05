@@ -40,8 +40,4 @@ public class UserService {
         userEntityService.deleteUser(id, userDeleteRequestDto);
     }
 
-   /* public void deleteUser(Long id){
-
-        userEntityService.delete(id);
-    }*/
 }

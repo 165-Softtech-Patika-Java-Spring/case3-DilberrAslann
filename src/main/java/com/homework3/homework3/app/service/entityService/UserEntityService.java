@@ -106,6 +106,8 @@ public class UserEntityService {
             throw new NotFoundException("Item not found!");
         }
 
+
+        user.getBaseAdditionalFields().setUpdateDate(new Date());
         user.setName(userUpdateDto.getName());
         user = userDao.save(user);
 
@@ -114,11 +116,6 @@ public class UserEntityService {
         return userResponseDto;
     }
 
-   /* public void delete(Long id) {
-        AppUser user = getById(id);
-
-        userDao.delete(user);
-    }*/
 
     public void deleteUser(Long id, UserDeleteRequestDto userDeleteRequestDto) {
         Optional<AppUser> userOptional = userDao.findById(id);
@@ -129,7 +126,7 @@ public class UserEntityService {
             userDao.delete(user);
         } else {
             throw new RuntimeException(userDeleteRequestDto.getName() +
-                    " kullanıcısının telefonu " + userDeleteRequestDto.getPhoneNumber() + " ile uyuşmamaktadır.");
+                    " user's phone does not match " + userDeleteRequestDto.getPhoneNumber());
         }
 
     }

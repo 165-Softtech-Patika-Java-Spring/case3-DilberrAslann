@@ -23,7 +23,6 @@ public class UserController {
         List<UserDto> userDtoList = userService.findAll();
 
         return ResponseEntity.ok(RestResponse.of(userDtoList));
-        //return ResponseEntity.ok(userDtoList);
     }
 
 
@@ -34,7 +33,7 @@ public class UserController {
         UserResponseDto userResponseDto = userService.save(userSaveRequestDto);
 
         return ResponseEntity.ok(RestResponse.of(userResponseDto));
-        //return ResponseEntity.ok(userResponseDto);
+
     }
 
 
@@ -45,18 +44,17 @@ public class UserController {
         UserResponseDto userResponseDto = userService.findById(id);
 
         return ResponseEntity.ok(RestResponse.of(userResponseDto));
-        // return ResponseEntity.ok(userResponseDto);
+
     }
 
 
-    //2.3. Kullanıcı adından kullanıcıyı getirme
+    // Kullanıcı adından kullanıcıyı getirme
     @GetMapping("/findByName/{name}")
     public ResponseEntity findByName(@PathVariable String name){
 
         UserResponseDto userResponseDto= userService.findByName(name);
 
         return ResponseEntity.ok(RestResponse.of(userResponseDto));
-        //return ResponseEntity.ok(userResponseDto);
     }
 
 
@@ -68,7 +66,6 @@ public class UserController {
         UserResponseDto userResponseDto = userService.updateUser(id, userUpdateDto);
 
         return ResponseEntity.ok(RestResponse.of(userResponseDto));
-        //return ResponseEntity.ok(userResponseDto);
     }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable Long id, @RequestBody UserDeleteRequestDto userDeleteRequestDto){
@@ -77,14 +74,7 @@ public class UserController {
 
         return ResponseEntity.ok(Void.TYPE);
     }
- /* @DeleteMapping("/delete/{id}")
-  public ResponseEntity delete(@PathVariable Long id){
 
-      userService.deleteUser(id);
-
-      return  ResponseEntity.ok(RestResponse.empty());
-      //return ResponseEntity.ok(Void.TYPE);
-  }*/
 
 
 }

@@ -24,7 +24,6 @@ public class CommentController {
         CommentResponseDto commentResponseDto = commentService.save(commentSaveRequestDto);
 
         return ResponseEntity.ok(RestResponse.of(commentResponseDto));
-        //return ResponseEntity.ok(commentResponseDto);
     }
 
     //
@@ -34,7 +33,6 @@ public class CommentController {
         commentService.deleteComment(id);
 
         return ResponseEntity.ok(RestResponse.empty());
-        //return ResponseEntity.ok(Void.TYPE);
     }
 
 
@@ -45,7 +43,6 @@ public class CommentController {
         List<CommentDto> commentDtoList = commentService.findAllByUserId(userId);
 
         return ResponseEntity.ok(RestResponse.of(commentDtoList));
-        //return ResponseEntity.ok(commentDtoList);
     }
 
 
@@ -56,7 +53,6 @@ public class CommentController {
         List<CommentDto> commentDtoList = commentService.findAllByProductId(productId);
 
         return ResponseEntity.ok(RestResponse.of(commentDtoList));
-        //return ResponseEntity.ok(commentDtoList);
     }
 
 }

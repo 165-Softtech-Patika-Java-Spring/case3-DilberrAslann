@@ -24,7 +24,6 @@ public class ProductController {
         ProductResponseDto productResponseDto = productService.findById(id);
 
         return ResponseEntity.ok(RestResponse.of(productResponseDto));
-        //return ResponseEntity.ok(productResponseDto);
     }
 
 
@@ -35,7 +34,6 @@ public class ProductController {
         ProductResponseDto productResponseDto = productService.save(productSaveRequestDto);
 
         return ResponseEntity.ok(RestResponse.of(productResponseDto));
-        //return ResponseEntity.ok(productResponseDto);
     }
 
 
@@ -46,7 +44,6 @@ public class ProductController {
          productService.deleteProduct(id);
 
         return ResponseEntity.ok(RestResponse.empty());
-        //return ResponseEntity.ok(Void.TYPE);
     }
 
 
@@ -59,7 +56,6 @@ public class ProductController {
        ProductResponseDto productResponseDto = productService.updateProductPrice(id, productUpdateDto);
 
        return ResponseEntity.ok(RestResponse.of(productResponseDto));
-       //return ResponseEntity.ok(productResponseDto);
    }
 
 
@@ -70,7 +66,6 @@ public class ProductController {
         List<ProductDto> productDtoList = productService.findAll();
 
         return ResponseEntity.ok(RestResponse.of(productDtoList));
-        //return ResponseEntity.ok(productDtoList);
     }
 
 }

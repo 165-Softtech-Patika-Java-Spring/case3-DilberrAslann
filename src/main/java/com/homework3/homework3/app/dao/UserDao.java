@@ -11,5 +11,4 @@ public interface UserDao extends JpaRepository<AppUser, Long> {
 
     Optional<AppUser> findByName(String name);
 
-   // AppUser findAllByUserId(Long userId);
 }
